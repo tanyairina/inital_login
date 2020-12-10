@@ -1,0 +1,65 @@
+#wrap{
+    margin: 0px auto;
+    background-color: rgb(127, 187, 255);
+    width: 950px;
+    font-family: sans-serif;
+    padding: 25px;
+}
+
+#wrap h1 {
+    color:  rgb(0, 60, 128);
+}
+.form-box{
+    display: inline-block;
+    background-color: rgb(135, 141, 222);
+    width: 400px;
+    min-height: 500px;
+    padding: 25px;
+    vertical-align: top;
+    margin: 10px;
+}
+
+    .form-box form{
+        margin: 25px;
+    }
+    
+    .form-box input{
+        display: block;
+        margin: 10px;
+    }
+
+#errors {
+    text-align: center;
+    color: red;
+    background-color: black;
+    padding: 20px;
+    height: 100px;
+}
+
+#posts {
+    background-color: rgb(135, 141, 222);
+    padding: 25px;
+    margin: 25px;
+}
+
+.one_post {
+    color: white;
+    background-color: rgb(0, 60, 128);
+    padding: 25px;
+    margin: 25px;
+    min-height: 100px;
+}
+
+.post{
+    font-size: 16pt;
+    text-align: center;
+}
+
+.poster {
+    font-size: 11pt;
+    text-align: center;
+}
+
+#write{
+    text-align: center;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <title>Login/Registration</title>
+</head>
+<body>
+    <div id='wrap'>
+        <h1>Login/Registration</h1>
+        {% if messages %}
+        <ul class="alert-danger" role="alert">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <div class='form-box'>
+            <h1>Register:</h1>
+            <form action="/register" method=POST>
+                {% csrf_token %}
+                <label for="fname">First Name:</label> <input type="text" name='fname' id="fname" class="form-control">
+                <label for="lname">Last Name:</label> <input type="text" name='lname' id="lname" class="form-control">
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" min='13' class="form-control" required>
+                <span class="validity"></span>
+                <label for="birth_date">Birthday:</label> 
+                <input type="date" name="birth_date" id=“birth_date” required>
+                <span class="validity"></span>   
+                <label for="email">Email: </label><input type="email" name="email" id="email" class="form-control">
+                <label for="password">Password: </label><input type="password" name='password' id='password' class="form-control">
+                <label for="confpw">Confirm Password: </label><input type="password" name='confpw' id='confpw' class="form-control">
+                <input type="submit" value='Create User'></input>
+            </form>
+        </div>
+        <div class='form-box'>
+            <h1>Login:</h1>
+            <form action="/login" method=POST>
+                {% csrf_token %}
+                <label>Email: </label>
+                <input type="email" name='email' id='email'></input>
+                <span class="validity"></span> 
+                <label>Password: </label><input type="password" name='password' id='password'></input>
+                <span class="validity"></span> 
+                <input type="submit" value='Login'></input>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
